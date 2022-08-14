@@ -1,10 +1,11 @@
 /*
  - / - index.html
  - /hello - hellofunc
- -/form - formfunc -> form.html
+ -/form - formfunc to handle submit of form.html ->
 
 */
 
+//main package for entry point package. This package will execute the "main" func as an entry point function
 package main
 
 import (
@@ -44,7 +45,9 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+//Main func under main package will be entry point for the application
 func main() {
+
 	fileServer := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fileServer)
 	http.HandleFunc("/hello", helloHandler)
